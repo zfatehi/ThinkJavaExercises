@@ -1,5 +1,5 @@
 
-//Exercise 2.2
+//Exercise 2.2, page 30
 
 public class Date {
 	public static void main(String[] args)

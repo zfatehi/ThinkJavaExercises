@@ -1,5 +1,5 @@
 
-//Exercise 2.3
+//Exercise 2.3, page 31
 
 public class Time {
 	public static void main(String[] args)

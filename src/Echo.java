@@ -1,3 +1,5 @@
+//Scanner Example, Section 3.2, page 35
+
 import java.util.Scanner;
 
 public class Echo {
