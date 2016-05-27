@@ -3,7 +3,7 @@
 
 import java.util.Scanner;
 
-public class InchesToCentimeters {
+public class Ch3_4_InchesToCentimeters {
 
 	public static void main(String[] args) {
 		int inch;
@@ -12,16 +12,16 @@ public class InchesToCentimeters {
 
 		System.out.print("How many inches? ");
 		inch = in.nextInt();
-		
-		//when final is used in front a variable you have assigned, you cannot reassign it later in code
-		// convention is to make a final variable (constant) in all caps 
-		
-		final double CMPERINCH = 2.54; 
-		cm = inch * CMPERINCH; 
-		
+
+		// when final is used in front a variable you have assigned, you cannot
+		// reassign it later in code
+		// convention is to make a final variable (constant) in all caps
+
+		final double CMPERINCH = 2.54;
+		cm = inch * CMPERINCH;
+
 		System.out.print(inch + " in = ");
 		System.out.println(cm + " cm");
-		
-		
+
 	}
 }
