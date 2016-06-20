@@ -1,8 +1,8 @@
 
 public class Ch7_5_MyExp {
 	public static void main(String[] args) {
-		System.out.println(exp(8, 5));
-		System.out.println(Math.exp(8));
+		System.out.println(exp(0.8, 5));
+		System.out.println(Math.exp(0.8));
 	}
 
 	public static double factorial(int x) {
@@ -39,6 +39,9 @@ public class Ch7_5_MyExp {
 		if (x < 0) {
 			throw new RuntimeException("We can't have a negative exponent.");
 		}
+		if (x > 1) {
+			throw new RuntimeException("We can't have a negative exponent.");
+		}
 		if (n < 0) {
 			throw new RuntimeException("We can't multiply x a negative amount of times.");
 		}
@@ -48,10 +51,10 @@ public class Ch7_5_MyExp {
 		// expresult is starting with 1 so we can start at the second term
 		double expresult = 1;
 		for (int i = 1; i <= n; i = i + 1) {
+			System.out.format("%d: pow %f factorial %f - %f%n", i, pow(x, i), factorial(i), pow(x, i) / factorial(i));
 			expresult = expresult + pow(x, i) / factorial(i);
 		}
 		return expresult;
-
 	}
 
 }
