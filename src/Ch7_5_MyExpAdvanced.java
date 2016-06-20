@@ -1,12 +1,13 @@
 
 public class Ch7_5_MyExpAdvanced {
 	public static void main(String[] args) {
-
-		check(0.8, 5);
+		check(1, 2);
+		check(1, 5);
+		check(1, 12);
 	}
 
 	public static void check(double x, int n) {
-		System.out.printf("%f\t%f\t%f", x, exp(x, n), Math.exp(x));
+		System.out.printf("%f\t%f\t%f%n", x, exp(x, n), Math.exp(x));
 	}
 
 	public static double exp(double x, int n) {
