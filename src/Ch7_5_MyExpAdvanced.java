@@ -1,8 +1,12 @@
 
 public class Ch7_5_MyExpAdvanced {
 	public static void main(String[] args) {
-		System.out.println(exp(0.8, 5));
-		System.out.println(Math.exp(0.8));
+
+		check(0.8, 5);
+	}
+
+	public static void check(double x, int n) {
+		System.out.printf("%f\t%f\t%f", x, exp(x, n), Math.exp(x));
 	}
 
 	public static double exp(double x, int n) {
