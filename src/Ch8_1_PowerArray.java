@@ -9,17 +9,17 @@ public class Ch8_1_PowerArray {
 			a[i] = i;
 		}
 
-		double[] b = arrayPow(a);
+		double[] b = arrayPow(a, 3);
 		for (int i = 0; i < b.length; i++) {
 			System.out.println(b[i]);
 		}
 	}
 
-	public static double[] arrayPow(double[] orig) {
+	public static double[] arrayPow(double[] orig, int pow) {
 		double[] sq = new double[orig.length];
 
 		for (int i = 0; i < orig.length; i++) {
-			sq[i] = Math.pow(orig[i], 2);
+			sq[i] = Math.pow(orig[i], pow);
 		}
 
 		return sq;
