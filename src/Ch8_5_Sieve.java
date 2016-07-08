@@ -3,9 +3,13 @@ public class Ch8_5_Sieve {
 
   public static void main(String[] args) {
     // Step 1: Call the sieve method
-    ...
+    boolean b[] = sieve(100);
     // Step 2: Print prime numbers (hint: indexes with a true value)
-    ...
+    for (int i = 0; i < b.length; i++) {
+      if (b[i] == true) {
+        System.out.println(i);
+      }
+    }
   }
 
   public static boolean[] sieve(int n) {
@@ -20,16 +24,19 @@ public class Ch8_5_Sieve {
     // false, in the boolean array
     // Use a helper function to mark multiples as false
     for (int i = 2; i < a.length; i++) {
+      eliminateMultiples(i, a);
     }
 
     return a;
   }
 
-  private static void eliminateMultiples(int prime, boolean[] a) {
-    for (int i = 2; i <= a.length / prime; i++) {
-      int multiple = prime * i;
-      a[multiple] = false;
+  private static void eliminateMultiples(int possibleprime, boolean[] a) {
+    for (int i = possibleprime + 1; i < a.length; i++) {
+      if (i % possibleprime == 0) {
+        a[i] = false;
+      }
     }
+
   }
 
 }
