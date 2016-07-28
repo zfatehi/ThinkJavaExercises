@@ -1,5 +1,5 @@
 
-public class Ch9_4_Recurse {
+public class Ch9_4_LoopForCharacters {
     public static void main(String[] args) {
         // TEST CASES
         System.out.println(first("happy"));
@@ -42,12 +42,16 @@ public class Ch9_4_Recurse {
      * Returns the length of the given String.
      */
     public static void printString(String s) {
-        if (length(s) == 0) {
-            return;
-        }
         System.out.println(first(s));
-        String restString = rest(s);
-        printString(restString);
+        // Create variable to hold the string that changes every time
+        String reststring = s;
+        // Loop using for (because we need the count of the length of the
+        // string)
+        for (int i = 0; i < length(s); i++) {
+            System.out.println(first(reststring));
+            reststring = rest(reststring);
+        }
+        // Subtract first letter by using rest function
 
     }
 }

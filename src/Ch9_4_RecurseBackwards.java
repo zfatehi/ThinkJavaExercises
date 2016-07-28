@@ -1,5 +1,5 @@
 
-public class Ch9_4_Recurse {
+public class Ch9_4_RecurseBackwards {
     public static void main(String[] args) {
         // TEST CASES
         System.out.println(first("happy"));
@@ -45,9 +45,9 @@ public class Ch9_4_Recurse {
         if (length(s) == 0) {
             return;
         }
-        System.out.println(first(s));
         String restString = rest(s);
         printString(restString);
+        System.out.println(first(s));
 
     }
 }
