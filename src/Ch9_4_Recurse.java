@@ -6,6 +6,7 @@ public class Ch9_4_Recurse {
         System.out.println(rest("happy"));
         System.out.println(middle("happy"));
         System.out.println(length("happy"));
+        printString("helloooo");
 
     }
 
@@ -35,5 +36,22 @@ public class Ch9_4_Recurse {
      */
     public static int length(String s) {
         return s.length();
+    }
+
+    /**
+     * Returns the length of the given String.
+     */
+    public static void printString(String s) {
+        System.out.println(first(s));
+        // Create variable to hold the string that changes every time
+        String reststring = s;
+        // Loop using for (because we need the count of the length of the
+        // string)
+        for (int i = 0; i < length(s); i++) {
+            System.out.println(first(reststring));
+            reststring = rest(reststring);
+        }
+        // Subtract first letter by using rest function
+
     }
 }
