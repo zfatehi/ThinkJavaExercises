@@ -3,7 +3,8 @@ public class Ch9_4_ReverseString {
     public static void main(String[] args) {
         // TEST CASES
 
-        System.out.println(reverseString("abc"));
+        System.out.println(palindrome("abba"));
+        System.out.println(palindrome("abc"));
 
     }
 
@@ -49,28 +50,12 @@ public class Ch9_4_ReverseString {
 
     }
 
-    /*
-    * Stack diagram (Sualeh's format)
-    * 
-    * >main
-    *      >reverseString - 0
-    *       s = "abc"
-    *       restString = "bc"
-    *           >reverseString - 1
-    *            s = "bc"
-    *            restString = "c"
-    *                >reverseString - 2
-    *                 s = "c"
-    *                 restString = ""
-    *                     >reverseString - 3
-    *                      s = ""
-    *                 < return ""
-    *                 partiallyReversed = ""
-    *            < return "c"
-    *            partiallyReversed = "c"
-    *       < return "cb"
-    *       partiallyReversed = "cb"
-    *  < return "cba"
-    *  print "cba"
-    */
+    public static boolean palindrome(String a) {
+        // IMPORTANT: In Java, == does NOT work for String - use .equals
+        if (reverseString(a).equals(a)) {
+            return true;
+        }
+        return false;
+    }
+
 }
