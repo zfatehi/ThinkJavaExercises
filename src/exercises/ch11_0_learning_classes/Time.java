@@ -44,4 +44,9 @@ public class Time {
         return this.hour + ":" + this.minute + ":" + this.second;
     }
 
+    public boolean isEqualTo(Time that) {
+        return this.hour == that.hour && this.minute == that.minute
+                && this.second == that.second;
+    }
+
 }
