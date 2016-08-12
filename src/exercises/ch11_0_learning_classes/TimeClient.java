@@ -30,6 +30,23 @@ public class TimeClient {
         // same location as time1 without creating a separate object, so
         // they're in the same location
         System.out.println(areEqualB);
+
+        Time startTime = new Time(5, 30, 0.0);
+        Time runningTime = new Time(2, 16, 0.0);
+        Time endTime;
+
+        endTime = Time.add(startTime, runningTime);
+        System.out.println(endTime);
+
+        endTime = startTime.add(runningTime);
+        System.out.println(endTime);
+
+        time1.increment(7580);
+        System.out.println(time1);
+
+        time3.increment2(7580);
+        System.out.println(time3);
+
     }
 
 }
