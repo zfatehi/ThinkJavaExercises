@@ -14,7 +14,7 @@ public class Tile {
      *            Tile value, 0-10
      */
     public Tile(char letter, int value) {
-        if (letter <= 65 || letter >= 90) {
+        if (letter < 65 || letter > 90) {
             throw new IllegalArgumentException(
                     "Bad letter, " + letter + " - please provide capital letter");
         }
