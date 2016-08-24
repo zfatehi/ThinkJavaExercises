@@ -1,4 +1,4 @@
-package exercises.ch11_0_learning_classes;
+package exercises.ch11_0_time;
 
 public class TimeClient {
 

@@ -1,4 +1,4 @@
-package exercises.ch11_0_Date;
+package exercises.ch11_0_date;
 
 public class DateClient {
     public static void main(String[] args) {
