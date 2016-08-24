@@ -1,3 +1,6 @@
+package exercises.ch11_0_rational;
+import java.math.BigInteger;
+
 public class Rational {
     private int numerator;
     private int denominator;
@@ -63,6 +66,26 @@ public class Rational {
     public double toDouble() {
         double newrational = (double) this.numerator / (double) this.denominator;
         return newrational;
+    }
+
+    private int gcd() {
+        BigInteger largernum = BigInteger.valueOf(this.numerator);
+        BigInteger largerdenom = BigInteger.valueOf(this.denominator);
+        BigInteger gcd = largernum.gcd(largerdenom);
+        return gcd.intValue();
+    }
+
+    public Rational reduce() {
+        // This function does not take care of a gcd of 0, because 0/0 isn't a
+        // rational number and the constructor of Rational takes care of this
+        int gcd = gcd();
+        if (gcd == 1) {
+            return this;
+        } else {
+            int newnum = this.numerator / gcd;
+            int newdenom = this.denominator / gcd;
+            return new Rational(newnum, newdenom);
+        }
     }
 
 }
