@@ -1,4 +1,5 @@
 package exercises.ch11_0_rational;
+
 public class RationalClient {
 
     public static void main(String[] args) {
@@ -6,7 +7,9 @@ public class RationalClient {
 
         // Positive numerator and denominator:
 
-        Rational rational = new Rational(3, 4);
+        Rational rational = new Rational(2, 4);
+        Rational addedrational = new Rational(2, 5);
+
         System.out.println(rational.toString());
 
         rational.negate();
@@ -18,6 +21,9 @@ public class RationalClient {
         System.out.println(rational.toDouble());
 
         System.out.println(rational.reduce());
+
+        System.out.println(rational.add(addedrational));
+        System.out.println("addedrational: " + addedrational);
 
         System.out.println();
 

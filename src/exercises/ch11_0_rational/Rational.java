@@ -1,4 +1,5 @@
 package exercises.ch11_0_rational;
+
 import java.math.BigInteger;
 
 public class Rational {
@@ -86,6 +87,24 @@ public class Rational {
             int newdenom = this.denominator / gcd;
             return new Rational(newnum, newdenom);
         }
+    }
+
+    public Rational add(Rational otherrational) {
+        // The new denominator is the product of the two rationals, this and
+        // otherrational
+
+        // Multiply the denominators together to get the final denominator:
+        int newdenominator = this.denominator * otherrational.denominator;
+
+        // Add the new numerators together to get the final numerator:
+        int newnumerator = this.numerator * (newdenominator / this.denominator)
+                + otherrational.numerator * (newdenominator / otherrational.denominator);
+
+        // The new rational as a result of the rationals being added together is
+        // called sum:
+        Rational sum = new Rational(newnumerator, newdenominator);
+        sum = sum.reduce();
+        return sum;
     }
 
 }
