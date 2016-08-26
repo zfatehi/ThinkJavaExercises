@@ -65,6 +65,32 @@ public class CardClient {
         }
     }
 
+    private static int[] suitHist(Card[] cards) {
+        // Create a return histogram array - size 4
+        int[] histogram = new int[4];
+        // Use a for loop over each character in the string:
+        for (int i = 0; i < cards.length; i++) {
+            // Add 1 to the suit's index value for every Card that has that suit
+            // value:
+            Card currentcard = cards[i];
+            int currentsuit = currentcard.getSuit();
+            histogram[currentsuit] = histogram[currentsuit] + 1;
+        }
+
+        return histogram;
+
+    }
+
+    public static boolean hasFlush(Card[] cards) {
+        int[] suithistogram = suitHist(cards);
+        for (int i = 0; i < suithistogram.length; i++) {
+            if (suithistogram[i] >= 5) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         // Array starts at 0, so if for example you want the 37th card (Jack of
         // Hearts) the index is 36
@@ -75,7 +101,14 @@ public class CardClient {
         System.out.println(search(cards, target));
         System.out.println(binarySearch(cards, target));
         System.out.println(binarysearchRecurse(cards, target, 0, cards.length - 1));
+        System.out.println(Arrays.toString(suitHist(cards)));
 
+        Card[] hand1 = new Card[] { new Card(1, 1), new Card(2, 1), new Card(3, 1),
+                new Card(4, 1), new Card(5, 1), new Card(3, 2) };
+        Card[] hand2 = new Card[] { new Card(1, 2), new Card(2, 1), new Card(3, 3),
+                new Card(4, 1), new Card(5, 1), new Card(3, 2) };
+        System.out.println(hasFlush(hand1));
+        System.out.println(hasFlush(hand2));
     }
 
 }
