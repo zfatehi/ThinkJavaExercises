@@ -8,12 +8,10 @@ public class StringDiff {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        // TODO Deal with spaces issue
-
         System.out.print("Enter string one:");
-        String inputStr1 = scan.next();
+        String inputStr1 = scan.nextLine();
         System.out.print("Enter string two:");
-        String inputStr2 = scan.next();
+        String inputStr2 = scan.nextLine();
         // DEBUG: System.out.println("String one: " + inputStr1);
         // DEBUG: System.out.println("String two: " + inputStr2);
 
