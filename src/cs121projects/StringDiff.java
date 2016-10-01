@@ -8,7 +8,7 @@ public class StringDiff {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        // TODO Deal with spaces issue!!
+        // TODO Deal with spaces issue
 
         System.out.print("Enter string one:");
         String inputStr1 = scan.next();
@@ -27,11 +27,19 @@ public class StringDiff {
         } else {
             shortestlen = inputStr2len;
         }
-        System.out.println(shortestlen);
+        System.out.println("Shorter string length: " + shortestlen);
 
         // Compare letter by letter
         // If letters are different, print out position (index) and each letter
         // Every time letter is different, add one to the count
+        for (int i = 0; i < shortestlen; i++) {
+            char char1cur = inputStr1.charAt(i);
+            char char2cur = inputStr2.charAt(i);
+            if (char1cur != char2cur) {
+                System.out.print(Integer.toString(i) + " " + Character.toString(char1cur)
+                        + " " + Character.toString(char2cur));
+            }
+        }
         // At the very end, print # of differences
     }
 }
