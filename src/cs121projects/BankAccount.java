@@ -1,4 +1,4 @@
-package cs121;
+package cs121projects;
 
 public class BankAccount {
     private String name;
