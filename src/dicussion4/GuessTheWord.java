@@ -24,7 +24,7 @@ public class GuessTheWord {
         System.out.println(" ");
 
         // Get the character (consonant) guess from player
-        System.out.println("Enter a character in that word: ");
+        System.out.println("Guess the word: ");
         String guessedWord = scan.next();
 
         /* Iterate through the word, printing the player's consonant
@@ -55,11 +55,13 @@ public class GuessTheWord {
                     Character.toString(inputChar) + " " + Integer.toString(count));
         }
 
-        // TODO 4: your code here.
-
         // Check the correctness of the player's guess and report results
 
-        // TODO 5: your code here.
+        if (wordToGuess.equals(guessedWord)) {
+            System.out.println("You got it! Good job!");
+        } else {
+            System.out.println("BOO!!!! The word was: " + wordToGuess);
+        }
     }
 
     /* 
