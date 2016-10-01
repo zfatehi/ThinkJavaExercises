@@ -25,8 +25,7 @@ public class GuessTheWord {
 
         // Get the character (consonant) guess from player
         System.out.println("Enter a character in that word: ");
-        String inputCharStr = scan.next();
-        char inputChar = inputCharStr.charAt(0);
+        String guessedWord = scan.next();
 
         /* Iterate through the word, printing the player's consonant
          if found. Also keep a count of the number of times the consonant 
@@ -39,14 +38,23 @@ public class GuessTheWord {
          * l 2
          */
         // TODO 3: your code here.
-        int count = 0;
-        for (int i = 0; i < wordToGuess.length(); i++) {
-            if (wordToGuess.charAt(i) == inputChar) {
-                count = count + 1;
+
+        for (int j = 0; j < guessedWord.length(); j++) {
+
+            int count = 0;
+            char inputChar = guessedWord.charAt(j);
+
+            for (int i = 0; i < wordToGuess.length(); i++) {
+                if (wordToGuess.charAt(i) == inputChar) {
+                    count = count + 1;
+                }
             }
+            // Report findings, prompt to guess the word, capture the player's
+            // word
+            System.out.println(
+                    Character.toString(inputChar) + " " + Integer.toString(count));
         }
-        // Report findings, prompt to guess the word, capture the player's word
-        System.out.println(Character.toString(inputChar) + " " + Integer.toString(count));
+
         // TODO 4: your code here.
 
         // Check the correctness of the player's guess and report results
