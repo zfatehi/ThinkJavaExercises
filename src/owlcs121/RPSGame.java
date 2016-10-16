@@ -62,7 +62,7 @@ public class RPSGame {
 
     private String chooseRPS() {
         int chosen = (int) ((Math.random() * 3) + 1);
-        if (chosen == 1) {
+        /*if (chosen == 1) {
             return "Rock";
         } else if (chosen == 2) {
             return "Paper";
@@ -71,6 +71,24 @@ public class RPSGame {
         } else {
             return "";
         }
+        */
+        String RPSstring;
+
+        switch (chosen) {
+        case 1:
+            RPSstring = "Rock";
+            break;
+        case 2:
+            RPSstring = "Paper";
+            break;
+        case 3:
+            RPSstring = "Scissors";
+            break;
+        default:
+            RPSstring = "";
+            break;
+        }
+        return RPSstring;
 
     }
 
