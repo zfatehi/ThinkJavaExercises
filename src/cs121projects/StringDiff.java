@@ -3,7 +3,6 @@ package cs121projects;
 import java.util.Scanner;
 
 public class StringDiff {
-    private static Scanner scan;
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
