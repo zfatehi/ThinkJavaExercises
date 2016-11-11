@@ -1,7 +1,6 @@
 package wordpercentages;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class WordPercentages extends FileAccessor {
 
@@ -19,7 +18,7 @@ public class WordPercentages extends FileAccessor {
         // other filtering.
         // loop over array of words
         // update wordlencounts and totalwordcount
-        String[] words = line.split(" ");
+        String[] words = line.split("[,.;:?!() ]");
         for (int i = 0; i < words.length; i++) {
             int wordlen = words[i].length();
             if (wordlen > 15) {
@@ -33,8 +32,10 @@ public class WordPercentages extends FileAccessor {
     }
 
     public double[] getWordPercentages() {
-        System.out.println("Word length counts: " + Arrays.toString(wordlencounts));
-        System.out.println("Total words: " + totalwordcount);
+        // DEBUG:
+        // System.out.println("Word length counts: " +
+        // Arrays.toString(wordlencounts));
+        // System.out.println("Total words: " + totalwordcount);
         double[] wordlenpercentages = new double[16];
         for (int i = 0; i < wordlencounts.length; i++) {
             wordlenpercentages[i] = (100.0 * wordlencounts[i]) / totalwordcount;
@@ -46,17 +47,20 @@ public class WordPercentages extends FileAccessor {
         /**
          * This method calculates a weighted avg: an average resulting from the
          * multiplication of each component(index of wordlencount: word length)
-         * by a factor reflecting its importance (wordlencount)and dived by
-         * total word count(totalwordcount)
+         * by a factor reflecting its importance (percentage, between 0 and 1)
          */
-        int weightedsum = 0;
-        double avgwordlen = 0;
-        for (int i = 0; i < wordlencounts.length; i++) {
-            weightedsum = wordlencounts[i] * i;
+        double[] wordlenpercentages = getWordPercentages();
+        double weightedsum = 0;
+        // Start for loop at 1 because words of length 0 are ignored
+        for (int i = 1; i < wordlenpercentages.length; i++) {
+            double weight = wordlenpercentages[i] / 100.0;
+            // System.out.println(String.format("Weight for word of length %d is
+            // %f", i, weight));
+            weightedsum = weightedsum + weight * i;
         }
-        avgwordlen = weightedsum / totalwordcount;
+        // System.out.println("Weighted sum is " + weightedsum);
 
-        return avgwordlen;
+        return weightedsum;
     }
 
 }

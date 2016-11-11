@@ -11,7 +11,7 @@ public class WordPercentagesDriver {
             // System.out.println("Enter a text file name to analyze:");
             // fileName = scan.nextLine();
             // FAKE IT
-            fileName = "/Users/zahra/Downloads/testFiles-1/TomSawyer.txt";
+            fileName = "/Users/zahra/Downloads/testFiles-1/HuckleberryFinn.txt";
             System.out.println("Analyzed text: " + fileName);
             WordPercentages wp = new WordPercentages(fileName);
             wp.processFile();
